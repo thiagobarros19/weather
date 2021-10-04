@@ -1,0 +1,41 @@
+<div class="page">
+  <div *ngIf="preloader" class="preloader-container">
+    <div class="spinner-grow text-color-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <header class="header flex">
+    <h4>WEATHER IN YOUR CITY</h4>
+    <form class="input-container" (submit)=(submit($event))>
+      <input type="text" placeholder="Your city name" name="cityInput" [(ngModel)]="cityInput">
+      <div class="icon" (click)="search()">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+    </form>
+  </header>
+  <div class="content flex">
+    <div *ngFor="let city of cityList.list" class="card flex" (click)="navigate(city.id)">
+      <div class="temp flex">
+        <span class="text-color bold">{{city.main.temp.toFixed(0)}}°C</span>
+      </div>
+      <div class="location flex">
+        <div class="city">
+          <span class="text-color-primary bold">{{city.name}}, {{city.sys.country}}</span>
+        </div>
+        <div class="max-min">
+          <span class="text-color">Máx</span>
+          <span class="text-red bold">{{city.main.temp_max.toFixed(1)}}°C</span>
+        </div>
+        <div class="max-min">
+          <span class="text-color">Mín</span>
+          <span class="text-color-primary bold">{{city.main.temp_min.toFixed(1)}}°C</span>
+        </div>
+      </div>
+      <div class="climate flex">
+        <img class="icon" src="https://openweathermap.org/img/w/{{city.weather[0].icon}}.png"
+          alt="{{city.weather[0].description}}" width="50" height="50">
+        <span class="climate-text">{{city.weather[0].description}}</span>
+      </div>
+    </div>
+  </div>
+</div>

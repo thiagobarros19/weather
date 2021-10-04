@@ -1,0 +1,85 @@
+<div class="page">
+  <div *ngIf="preloader" class="preloader-container">
+    <div class="spinner-grow text-color-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <header class="header flex">
+    <div class="back-icon" (click)="routerBack()">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+    </div>
+    <form class="input-container" (submit)=(submit($event))>
+      <input type="text" placeholder="Your city name" name="cityInput" [(ngModel)]="cityInput">
+      <div class="icon" (click)="search()">
+        <fa-icon [icon]="faCoffee"></fa-icon>
+      </div>
+    </form>
+  </header>
+  <div class="content flex">
+    <span class="title">Weather in {{cityWeather.name}}</span>
+    <span class="subtitle">{{cityWeather.dtString}}</span>
+    <div class="card flex">
+      <div class="header-content flex">
+        <div class="climate flex">
+          <div class="temp flex">
+            <span class="text-color bold">{{cityWeather.main.temp.toFixed(0)}}°C</span>
+          </div>
+          <div class="icon flex">
+            <img class="icon-image" src="https://openweathermap.org/img/w/{{cityWeather.weather[0].icon}}.png"
+              alt="{{cityWeather.weather[0].description}}" width="50" height="50">
+            <span class="climate-text">{{cityWeather.weather[0].description}}</span>
+          </div>
+        </div>
+        <div class="temps flex">
+          <div class="temps-container flex">
+            <div class="max-min flex">
+              <span class="text-color bold">Máx</span>
+              <span class="text-red bold">{{cityWeather.main.temp_max.toFixed(1)}}°C</span>
+            </div>
+          </div>
+          <div class="temps-container flex">
+            <div class="max-min flex">
+              <span class="text-color bold">Mín</span>
+              <span class="text-color-primary bold">{{cityWeather.main.temp_min.toFixed(1)}}°C</span>
+            </div>
+          </div>
+          <div class="temps-container flex">
+            <div class="max-min flex">
+              <span class="text-color bold">Sunrise</span>
+              <span>{{cityWeather.sys.sunriseString}}</span>
+            </div>
+          </div>
+          <div class="temps-container flex">
+            <div class="max-min flex">
+              <span class="text-color bold">Sunset</span>
+              <span>{{cityWeather.sys.sunsetString}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="forecast-content flex">
+        <div class="forecast-header">
+          <span class="forecast-header-title text-color">5 day weather forecast</span>
+          <span class="forecast-header-subtitle text-color">every 3 hours</span>
+        </div>
+        <div class="forecast-list flex">
+          <div *ngFor="let forecast of forecast.list" class="forecast-item flex">
+            <div class="datetime flex">
+              <span class="date text-color bold">{{forecast.dtString}}</span>
+              <span class="time">{{forecast.timeString}}</span>
+            </div>
+            <div class="climate flex">
+              <img class="icon-image" src="https://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png"
+                alt="{{forecast.weather[0].description}}" width="50" height="50">
+              <span class="climate-text">{{forecast.weather[0].description}}</span>
+            </div>
+            <div class="max-min flex">
+              <span class="text-red bold">{{forecast.main.temp_max.toFixed(1)}}°C</span>
+              <span class="text-color-primary bold">{{forecast.main.temp_min.toFixed(1)}}°C</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

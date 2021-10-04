@@ -1,0 +1,135 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #39a3db;
+  --white: #fff;
+  --background: ##f6f6f6;
+  --grey: #f0f0f0;
+  --text: #3c3c3c;
+  --title: #2E384D;
+  --red: #b30000;
+  --green: #4CD62B;
+  --blue: #2d7eaa;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--grey);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: var(--blue);
+}
+
+.text-color-primary {
+  color: var(--primary);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-red {
+  color: var(--red);
+}
+
+.text-color {
+  color: var(--text);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .back-icon {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 450px;
+  width: 80%;
+  height: 48px;
+  padding: 12px;
+  margin: 12px;
+
+  background-color: var(--white);
+  border-radius: 6px;
+  border: 3px solid var(--white);
+}
+
+.input-container:focus-within {
+  border-color: var(--blue);
+  transition: 0.2s;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  line-height: 36px;
+  font-size: 18px;
+  color: var(--text);
+  caret-color: var(--primary);
+}
+
+.input-container input:focus {
+  outline: none;
+}
+
+.input-container .icon {
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.input-container .icon:hover {
+  color: var(--blue);
+  transition: 0.2s;
+}
+
+.preloader-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+.preloader-container div {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}

@@ -1,0 +1,82 @@
+.header {
+  height: 300px;
+  background-color: var(--primary);
+  color: var(--white);
+
+  flex-direction: column;
+}
+
+.content {
+  width: 100%;
+  margin-top: -50px;
+
+  flex-direction: column;
+}
+
+.content .card {
+  width: 90%;
+  max-width: 700px;
+  // height: 170px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: none;
+
+  background-color: var(--white);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.1);
+
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.content .card .temp,
+.content .card .climate {
+  width: 30%;
+  height: 100%;
+}
+
+
+.content .card .location {
+  width: 40%;
+  height: 100%;
+}
+
+.content .card .temp {
+  background-color: var(--grey);
+  height: 170px;
+}
+
+.content .card .temp span{
+  font-size: 48px;
+  opacity: 0.75;
+}
+
+.content .card .location {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 20px;
+}
+
+.content .card .location .city {
+  font-size: 24px;
+}
+
+.content .card .location .max-min {
+  margin-bottom: 6px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .card .location .max-min :first-child {
+  opacity: 0.5;
+}
+
+.content .card .climate {
+  flex-direction: column;
+  padding: 20px;
+}
+
+.content .card .climate .climate-text {
+  font-style: italic;
+}

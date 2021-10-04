@@ -1,0 +1,188 @@
+.header {
+  height: 120px;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+.content {
+  width: 100%;
+  padding: 50px 20px;
+
+  flex-direction: column;
+}
+
+.content .title {
+  font-size: 36px;
+}
+
+.content .subtitle {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.content .card {
+  width: 90%;
+  max-width: 780px;
+  margin-top: 36px;
+  padding: 20px;
+  border: none;
+
+  background-color: var(--white);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.content .card .header-content {
+  width: 100%;
+
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.content .card .header-content .climate{
+  width: 200px;
+  height: 200px;
+  flex-direction: column;
+
+  border: 3px solid var(--grey);
+  border-radius: 6px;
+  padding: 0px;
+}
+
+.content .card .header-content .climate div{
+  height: 50%;
+}
+
+.content .card .header-content .climate .temp{
+  width: 100%;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+
+  background-color: var(--grey);
+}
+
+.content .card .header-content .climate .temp span{
+  font-size: 48px;
+  opacity: 0.75;
+}
+
+.content .card .header-content .climate .icon {
+  flex-direction: column;
+}
+
+.content .card .header-content .climate .icon .climate-text {
+  opacity: 0.75;
+  font-style: italic;
+}
+
+.content .card .header-content .temps {
+  height: 200px;
+  margin-left: 36px;
+
+  flex: 1;
+  flex-direction: column;
+}
+
+.content .card .header-content .temps .temps-container,
+.content .card .header-content .temps .temps-container .max-min {
+  width: 100%;
+  height: 25%;
+
+  border-bottom: 1px solid var(--grey);
+
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content .card .header-content .temps .temps-container .max-min {
+  max-width: 200px;
+  border-bottom: none;
+}
+
+.content .card .header-content .temps .temps-container .max-min span + span {
+  text-align: left;
+  width: 50px;
+}
+
+.content .card .forecast-content {
+  width: 100%;
+  margin-top: 50px;
+
+  flex-direction: column;
+}
+
+.content .card .forecast-content .forecast-header {
+  width: 100%;
+  margin-top: 50px;
+
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.content .card .forecast-content .forecast-header .forecast-header-title {
+  font-size: 24px;
+  margin-right: 12px;
+}
+
+.content .card .forecast-content .forecast-header .forecast-header-subtitle {
+  font-size: 12px;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.content .card .forecast-content .forecast-list {
+  width: 100%;
+  flex-direction: column;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item {
+  width: 100%;
+  height: 100px;
+
+  border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+
+  justify-content: space-between;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item:hover {
+  background: linear-gradient(-90deg, var(--grey) 98%,var(--blue) 2%);
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .datetime,
+.content .card .forecast-content .forecast-list .forecast-item .climate{
+  width: 25%;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .max-min{
+  flex: 1;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .datetime{
+  flex-direction: column;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .datetime .date{
+  font-size: 16px;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .datetime .time{
+  font-size: 12px;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .climate .climate-text{
+  font-size: 14px;
+  opacity: 0.75;
+  font-style: italic;
+
+  margin-left: 12px;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .max-min span{
+  font-size: 16px;
+}
+
+.content .card .forecast-content .forecast-list .forecast-item .max-min span:first-child{
+  margin-right: 24px;
+}
